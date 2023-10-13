@@ -1,0 +1,40 @@
+.card {
+  border-bottom: 1px solid var(--cinza);
+  border-right: 1px solid var(--cinza);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3rem 0 3rem 0;
+  width: 80%;
+}
+
+.article {
+  width: 40%;
+}
+
+.title {
+  margin: 1rem 0 2rem 0 ;
+  text-align: center;
+  width: 100%;
+}
+
+.introdution {
+  width: 100%;
+}
+
+.imageContainer {
+  width: 50%;
+}
+
+.image {
+  border-radius: 0.3rem;
+  width: 100%;
+}
+
+.newInfoContainer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  width: 80%;
+}

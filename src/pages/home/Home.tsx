@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
+
 import { fetchNews } from '../../utils/fetchs';
-import Loading from '../../components/loading/Loading';
 import { NewsType } from '../../types';
+
+import Loading from '../../components/loading/Loading';
 import NewsCard from '../../components/newsCard/NewsCard';
+
+import styles from './home.module.css';
 
 export default function Home() {
   const [news, setNews] = useState<NewsType[]>([]);
@@ -25,7 +29,7 @@ export default function Home() {
   }, []);
 
   return (
-    <section>
+    <section className={ styles.container }>
       {loading && <Loading />}
 
       {news.map((newInfo) => (

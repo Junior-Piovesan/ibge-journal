@@ -1,5 +1,8 @@
 import useImages from '../../Hooks/useImages';
+
 import { NewsType } from '../../types';
+
+import styles from './newsCard.module.css';
 
 type Propstype = {
   newInfo:NewsType
@@ -7,19 +10,25 @@ type Propstype = {
 
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
+  console.log(newInfo.id);
 
   return (
-    <section>
-      <article>
-        <h1>{newInfo.titulo}</h1>
-        <p>{newInfo.introducao}</p>
+    <section className={ styles.card }>
+
+      <article className={ styles.article }>
+        <h1 className={ styles.title }>{newInfo.titulo}</h1>
+        <p className={ styles.introdution }>{newInfo.introducao}</p>
       </article>
 
-      <div>
-        <img src={ imagesObj.image_intro } alt="Imagem da notícia" />
+      <div className={ styles.imageContainer }>
+        <img
+          className={ styles.image }
+          src={ imagesObj.image_intro }
+          alt="Imagem da notícia"
+        />
       </div>
 
-      <section>
+      <section className={ styles.newInfoContainer }>
         <span>{`Publicação: ${newInfo.data_publicacao}`}</span>
         <span>{newInfo.editorias}</span>
       </section>
