@@ -1,0 +1,31 @@
+.header {
+  border-bottom: 1px solid var(--cinza);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem
+}
+
+.dateContainer ,.titleContainer, .profileContainer  {
+  align-items: center;
+  display: flex;
+  width: 30%;
+}
+
+.date {
+  font-weight: 700;
+}
+
+.titleContainer {
+  justify-content: center;
+}
+
+.profileContainer {
+  justify-content: end;
+}
+
+
+.title {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+}

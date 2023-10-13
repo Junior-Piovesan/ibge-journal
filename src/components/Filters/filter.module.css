@@ -1,0 +1,7 @@
+.nav {
+  align-items: center;
+  border-bottom: 4px double var(--preto);
+  display: flex;
+  height: 3rem;
+  justify-content: space-around;
+}
