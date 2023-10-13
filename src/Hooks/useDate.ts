@@ -13,7 +13,7 @@ const useDate = () => {
     const month = newDate.getMonth();
     const year = newDate.getFullYear();
 
-    return `${daysOfWeek[dayWeek - 4]}/${day}/${months[month]}/${year}`;
+    return `${daysOfWeek[dayWeek - 4]}, ${day}, ${months[month]}, ${year}`;
   };
 
   useEffect(() => {
