@@ -1,4 +1,15 @@
 :root {
-  font-family: 'Anton', sans-serif;
+
+  --branco: #fefefe;
+  --cinza: #959595;
+  --preto: #121212;
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Anton', sans-serif; */
   font-family: 'Roboto', sans-serif;
 }
