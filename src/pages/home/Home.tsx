@@ -1,7 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { fetchNews } from '../../utils/fetchs';
-import { NewsType } from '../../types';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { Dispatch, ReduxState } from '../../types';
+
+import { fetchRecentsNews } from '../../redux/actions/recentsNewsAction';
 
 import Loading from '../../components/loading/Loading';
 import NewsCard from '../../components/newsCard/NewsCard';
@@ -9,23 +12,13 @@ import NewsCard from '../../components/newsCard/NewsCard';
 import styles from './home.module.css';
 
 export default function Home() {
-  const [news, setNews] = useState<NewsType[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [showError, setShowError] = useState(false);
-
-  const getNews = async () => {
-    try {
-      const newsData = await fetchNews('10');
-      setNews(newsData.items);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      setShowError(true);
-    }
-  };
+  const { news, loading, error } = useSelector(
+    (state:ReduxState) => state.recentsNewsReducer,
+  );
+  const dispatch:Dispatch = useDispatch();
 
   useEffect(() => {
-    getNews();
+    dispatch(fetchRecentsNews());
   }, []);
 
   return (

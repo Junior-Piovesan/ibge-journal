@@ -1,6 +1,5 @@
-import store from './redux';
-
-export type GlobalState = ReturnType<typeof store.getState>;
+import { ThunkDispatch } from 'redux-thunk';
+import { AnyAction } from 'redux';
 
 export type NewsType = {
   id: number,
@@ -21,3 +20,13 @@ export type ImagesType = {
   image_fulltext:string,
   image_intro:string,
 };
+
+export type ReduxState = {
+  recentsNewsReducer: {
+    news: NewsType[],
+    loading: boolean,
+    error: boolean,
+  }
+};
+
+export type Dispatch = ThunkDispatch<ReduxState, null, AnyAction>;

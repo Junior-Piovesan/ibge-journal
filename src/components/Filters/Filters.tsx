@@ -7,17 +7,30 @@ export default function Filters() {
 
       <label htmlFor="recentes">
         Mais recentes
-        <input name="filter" id="recentes" type="radio" />
+        <input
+          onChange={ () => console.log('oi') }
+          name="filter"
+          id="recentes"
+          type="radio"
+        />
       </label>
 
       <label htmlFor="release">
         Realease
-        <input name="filter" id="release" type="radio" />
+        <input
+          name="filter"
+          id="release"
+          type="radio"
+        />
       </label>
 
       <label htmlFor="noticia">
         Notícia
-        <input name="filter" id="noticia" type="radio" />
+        <input
+          name="filter"
+          id="noticia"
+          type="radio"
+        />
       </label>
 
       <Link to="/favorites">Favoritos</Link>

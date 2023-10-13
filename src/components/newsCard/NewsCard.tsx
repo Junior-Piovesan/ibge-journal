@@ -10,7 +10,6 @@ type Propstype = {
 
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
-  console.log(newInfo.id);
 
   return (
     <section className={ styles.card }>
