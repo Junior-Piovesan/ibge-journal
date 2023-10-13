@@ -1,1 +1,7 @@
-
+#root {
+  display: flex;
+  justify-content: center;
+}
+.global-container {
+  width: 80%;
+}
