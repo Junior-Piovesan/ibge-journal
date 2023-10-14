@@ -1,21 +1,21 @@
-import { Button, Link } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { countMoreAction } from '../../redux/actions/moreNewsAction';
+
+import styles from './footer.module.css';
 
 export default function Footer() {
   const dispatch = useDispatch();
   return (
-    <footer>
+    <footer className={ styles.footer }>
 
-      <Button
+      <button
         onClick={ () => { dispatch(countMoreAction()); } }
-        variant="outlined"
-        size="medium"
+        className={ styles.button }
       >
         Ver mais notícias
-      </Button>
+      </button>
 
-      <Link href="#topo">Voltar ao topo</Link>
+      <a className={ styles.link } href="#topo">Voltar ao topo</a>
 
     </footer>
   );

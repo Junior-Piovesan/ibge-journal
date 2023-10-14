@@ -7,9 +7,13 @@
   width: 100%;
 }
 
-.label {
+.label,.labelcheck {
   border-bottom: 1px solid var(--cinza);
   cursor: pointer;
+}
+.labelcheck {
+  font-weight: 700;
+  border-bottom: 2px solid var(--cinza);
 }
 
 .input {

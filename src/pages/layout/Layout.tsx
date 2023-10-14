@@ -9,7 +9,6 @@ export default function Layout() {
       <Hearder />
       <Filters />
       <Outlet />
-      <Footer />
     </>
   );
 }

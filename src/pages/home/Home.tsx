@@ -10,6 +10,7 @@ import Loading from '../../components/loading/Loading';
 import NewsCard from '../../components/newsCard/NewsCard';
 
 import styles from './home.module.css';
+import Footer from '../../components/footer/Footer';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
@@ -29,7 +30,7 @@ export default function Home() {
       {news.map((newInfo) => (
         <NewsCard key={ newInfo.id } newInfo={ newInfo } />
       )).filter((e, index) => index <= moreNews)}
-
+      {!loading && <Footer />}
     </section>
   );
 }
