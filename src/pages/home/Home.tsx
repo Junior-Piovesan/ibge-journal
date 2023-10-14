@@ -15,6 +15,7 @@ export default function Home() {
   const { news, loading, error } = useSelector(
     (state:ReduxState) => state.newsReducer,
   );
+  const { moreNews } = useSelector((state:ReduxState) => state.moreNewsReducer);
   const dispatch:Dispatch = useDispatch();
 
   useEffect(() => {
@@ -27,7 +28,8 @@ export default function Home() {
 
       {news.map((newInfo) => (
         <NewsCard key={ newInfo.id } newInfo={ newInfo } />
-      ))}
+      )).filter((e, index) => index <= moreNews)}
+
     </section>
   );
 }

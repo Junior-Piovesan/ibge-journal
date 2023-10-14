@@ -27,6 +27,9 @@ export type ReduxState = {
     loading: boolean,
     error: boolean,
   }
+  moreNewsReducer: {
+    moreNews:number
+  }
 };
 
 export type Dispatch = ThunkDispatch<ReduxState, null, AnyAction>;
