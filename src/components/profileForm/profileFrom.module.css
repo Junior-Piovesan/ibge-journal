@@ -1,0 +1,46 @@
+.container {
+  align-items: center;
+  border-right: 1px solid var(--cinza);
+  border-bottom: 1px solid var(--cinza);
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.label {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.input {
+  border-radius: 0.2rem;
+  border: 1px solid var(--cinza);
+  height: 2rem;
+  outline: none;
+  padding-left: 0.5rem;
+  margin-left: 0.5rem ;
+  transition: 0.2s;
+  width: 50%;
+}
+
+.input:focus {
+  box-shadow: 3px 3px 9px var(--cinza);
+  transition: 0.2s;
+}
+
+.button {
+  border: 1px solid var(--cinza);
+  border-radius: 0.2rem;
+  cursor: pointer;
+  height: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+  width: 50%;
+}
+
+.button:active {
+background-color: var(--branco); 
+}
