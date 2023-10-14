@@ -5,7 +5,6 @@
 }
 
 .userInfoContainer {
-  /* align-items: center; */
   display: flex;
   flex-direction: column;
   border-left: 1px solid var(--cinza);

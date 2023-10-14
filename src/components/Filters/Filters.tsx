@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { Dispatch } from '../../types';
 
 import { resetCount } from '../../redux/actions/moreNewsAction';
@@ -11,18 +12,27 @@ import { fetchRecentsNews } from '../../redux/actions/recentsNewsAction';
 
 import styles from './filter.module.css';
 
+const MAIS_RECENTES = 'mais-recentes';
+
 export default function Filters() {
+  const [checked, setchecked] = useState(MAIS_RECENTES);
+
   const dispatch:Dispatch = useDispatch();
 
   return (
     <nav id="topo" className={ styles.nav }>
 
-      <label htmlFor="recentes">
+      <label
+        className={ checked === MAIS_RECENTES ? styles.labelcheck : styles.label }
+        htmlFor="recentes"
+      >
         Mais recentes
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchRecentsNews());
+            setchecked(MAIS_RECENTES);
           } }
           defaultChecked
           name="filter"
@@ -31,12 +41,17 @@ export default function Filters() {
         />
       </label>
 
-      <label htmlFor="release">
+      <label
+        className={ checked === 'release' ? styles.labelcheck : styles.label }
+        htmlFor="release"
+      >
         Release
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchReleaseAction());
+            setchecked('release');
           } }
           name="filter"
           id="release"
@@ -44,12 +59,17 @@ export default function Filters() {
         />
       </label>
 
-      <label htmlFor="noticia">
+      <label
+        className={ checked === 'noticia' ? styles.labelcheck : styles.label }
+        htmlFor="noticia"
+      >
         Notícia
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchNoticiasAction());
+            setchecked('noticia');
           } }
           name="filter"
           id="noticia"
@@ -57,7 +77,7 @@ export default function Filters() {
         />
       </label>
 
-      <Link to="/favorites">Favoritos</Link>
+      <Link className={ styles.link } to="/favorites">Favoritos</Link>
     </nav>
   );
 }

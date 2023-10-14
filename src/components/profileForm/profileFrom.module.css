@@ -42,5 +42,5 @@
 }
 
 .button:active {
-background-color: var(--branco); 
+  background-color: var(--branco); 
 }
