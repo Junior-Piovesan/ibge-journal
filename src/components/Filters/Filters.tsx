@@ -17,9 +17,10 @@ export default function Filters() {
   return (
     <nav id="topo" className={ styles.nav }>
 
-      <label htmlFor="recentes">
+      <label className={ styles.label } htmlFor="recentes">
         Mais recentes
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchRecentsNews());
@@ -31,9 +32,10 @@ export default function Filters() {
         />
       </label>
 
-      <label htmlFor="release">
+      <label className={ styles.label } htmlFor="release">
         Release
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchReleaseAction());
@@ -44,9 +46,10 @@ export default function Filters() {
         />
       </label>
 
-      <label htmlFor="noticia">
+      <label className={ styles.label } htmlFor="noticia">
         Notícia
         <input
+          className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
             dispatch(fetchNoticiasAction());
@@ -57,7 +60,7 @@ export default function Filters() {
         />
       </label>
 
-      <Link to="/favorites">Favoritos</Link>
+      <Link className={ styles.link } to="/favorites">Favoritos</Link>
     </nav>
   );
 }

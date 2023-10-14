@@ -27,7 +27,6 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
     if (validationForm(profile)) {
       dispatch(userUpdateAction(profile));
       setProfile({ user: '', email: '' });
-      console.log('oi');
     }
   };
   return (
