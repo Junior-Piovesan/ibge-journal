@@ -26,9 +26,13 @@ export type ReduxState = {
     news: NewsType[],
     loading: boolean,
     error: boolean,
-  }
+  },
   moreNewsReducer: {
     moreNews:number
+  },
+  userReducer : {
+    user: string,
+    Email: string,
   }
 };
 

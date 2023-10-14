@@ -1,8 +1,24 @@
+import { Link } from 'react-router-dom';
+
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import useDate from '../../Hooks/useDate';
+
+import profileIcon from '../../assets/profileIcon.svg';
+
 import styles from './header.module.css';
+import { ReduxState } from '../../types';
 
 export default function Hearder() {
+  const [profile, setProfile] = useState('Profile');
+  const { user } = useSelector((state:ReduxState) => state.userReducer);
+
   const { date } = useDate();
+
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   return (
     <header className={ styles.header }>
       <section className={ styles.dateContainer }>
@@ -14,7 +30,10 @@ export default function Hearder() {
       </section>
 
       <section className={ styles.profileContainer }>
-        perfil
+        <Link className={ styles.link } to="/profile">
+          <img className={ styles.img } src={ profileIcon } alt="icone de perfil" />
+          {user}
+        </Link>
       </section>
     </header>
   );
