@@ -1,14 +1,25 @@
 import { Link } from 'react-router-dom';
+
+import { useDispatch } from 'react-redux';
+import { Dispatch } from '../../types';
+
+import { fetchReleaseAction } from '../../redux/actions/releaseNewsAction';
+import { fetchRecentsNews } from '../../redux/actions/recentsNewsAction';
+import { fetchNoticiasAction } from '../../redux/actions/noticiasNewsAction';
+
 import styles from './filter.module.css';
 
 export default function Filters() {
+  const dispatch:Dispatch = useDispatch();
+
   return (
     <nav className={ styles.nav }>
 
       <label htmlFor="recentes">
         Mais recentes
         <input
-          onChange={ () => console.log('oi') }
+          onChange={ () => dispatch(fetchRecentsNews()) }
+          defaultChecked
           name="filter"
           id="recentes"
           type="radio"
@@ -16,8 +27,9 @@ export default function Filters() {
       </label>
 
       <label htmlFor="release">
-        Realease
+        Release
         <input
+          onChange={ () => dispatch(fetchReleaseAction()) }
           name="filter"
           id="release"
           type="radio"
@@ -27,6 +39,7 @@ export default function Filters() {
       <label htmlFor="noticia">
         Notícia
         <input
+          onChange={ () => dispatch(fetchNoticiasAction()) }
           name="filter"
           id="noticia"
           type="radio"

@@ -22,7 +22,7 @@ export type ImagesType = {
 };
 
 export type ReduxState = {
-  recentsNewsReducer: {
+  newsReducer: {
     news: NewsType[],
     loading: boolean,
     error: boolean,

@@ -13,7 +13,7 @@ import styles from './home.module.css';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
-    (state:ReduxState) => state.recentsNewsReducer,
+    (state:ReduxState) => state.newsReducer,
   );
   const dispatch:Dispatch = useDispatch();
 
