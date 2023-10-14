@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+}
+
+.userInfoContainer {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--cinza);
+  border-bottom: 1px solid var(--cinza);
+  width: 40%;
+}
+
+.user, .email {
+  margin-left: 2rem ;
+  margin-bottom: 1em;
+}

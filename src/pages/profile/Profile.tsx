@@ -1,7 +1,9 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { validationForm } from '../../utils/validationForm';
-import { userUpdateAction } from '../../redux/actions/userAction';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import ProfileForm from '../../components/profileForm/ProfileForm';
+import { ReduxState } from '../../types';
+
+import styles from './profile.module.css';
 
 const INITIAL_STATE = {
   user: '',
@@ -10,58 +12,20 @@ const INITIAL_STATE = {
 
 export default function Profile() {
   const [profile, setProfile] = useState(INITIAL_STATE);
-  const dispatch = useDispatch();
-
-  const onChange = (
-    { target: { name, value } }:ChangeEvent<HTMLInputElement>,
-  ) => {
-    setProfile({
-      ...profile,
-      [name]: value,
-    });
-  };
-
-  const onSubmit = (event:FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (validationForm(profile)) {
-      dispatch(userUpdateAction(profile));
-      setProfile(INITIAL_STATE);
-      console.log('oi');
-    }
-  };
+  const { user, email } = useSelector((state:ReduxState) => state.userReducer);
 
   return (
-    <form
-      onSubmit={ (event) => {
-        console.log('oi');
-        onSubmit(event);
-      } }
-    >
+    <section className={ styles.container }>
 
-      <label htmlFor="name">
-        Nome
-        <input
-          onChange={ onChange }
-          name="user"
-          value={ profile.user }
-          placeholder="Digite seu primeiro nome"
-          id="name"
-          type="text"
-        />
-      </label>
+      <div className={ styles.userInfoContainer }>
+        <p className={ styles.user }>{`Nome: ${user}`}</p>
+        <p className={ styles.email }>{`email: ${email}`}</p>
+      </div>
 
-      <label htmlFor="email">
-        Email
-        <input
-          onChange={ onChange }
-          name="email"
-          value={ profile.email }
-          placeholder="Digite seu email"
-          id="email"
-          type="text"
-        />
-      </label>
-      <button>Enviar</button>
-    </form>
+      <ProfileForm
+        profile={ profile }
+        setProfile={ setProfile }
+      />
+    </section>
   );
 }

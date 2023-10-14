@@ -9,8 +9,8 @@ type ActionType = {
 };
 
 const INITIAL_REDUCER = {
-  user: 'Profile',
-  Email: '',
+  user: '',
+  email: '',
 };
 
 const userReducer = (state = INITIAL_REDUCER, action:ActionType) => {

@@ -32,7 +32,7 @@ export type ReduxState = {
   },
   userReducer : {
     user: string,
-    Email: string,
+    email: string,
   }
 };
 
