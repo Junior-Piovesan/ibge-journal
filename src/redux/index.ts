@@ -1,10 +1,12 @@
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import thunk from 'redux-thunk';
-import recentsNewsReducer from './reducers/recentsNewsReducer';
+import newsReducer from './reducers/newsReducer';
+import moreNewsReducer from './reducers/moreNewsReducer';
 
 const reducer = combineReducers({
-  recentsNewsReducer,
+  newsReducer,
+  moreNewsReducer,
 });
 
 const store = legacy_createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));

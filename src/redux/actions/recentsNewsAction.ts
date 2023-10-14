@@ -34,7 +34,7 @@ export const fetchRecentsNews = () => {
       const data = await fetchNews();
       dispatch(requestSuccessful(data));
     } catch (error: any) {
-      requestFail();
+      dispatch(requestFail());
     }
   };
 };

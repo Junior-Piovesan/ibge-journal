@@ -15,11 +15,13 @@ const globalNews = {
   error: false,
 };
 
-const recentsNewsReducer = (state = globalNews, action: ActionType) => {
+const newsReducer = (state = globalNews, action: ActionType) => {
   switch (action.type) {
     case REQUEST_STARTED:
       return {
         ...state,
+        news: [],
+        loading: true,
       };
 
     case REQUEST_SUCESS:
@@ -40,4 +42,4 @@ const recentsNewsReducer = (state = globalNews, action: ActionType) => {
   }
 };
 
-export default recentsNewsReducer;
+export default newsReducer;
