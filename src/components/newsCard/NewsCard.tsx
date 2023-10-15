@@ -6,7 +6,11 @@ import { NewsType, ReduxState } from '../../types';
 import styles from './newsCard.module.css';
 
 import favoriteIcon from '../../assets/favorite.svg';
-import isfavoriteIcon from '../../assets/isFavorite.svg';
+import isFavoriteIcon from '../../assets/isFavorite.svg';
+
+import { isFavorite } from '../../utils/isFavorite';
+import { addFavoritesOrRemove } from '../../utils/AddFavoritesOrRemove';
+import { addFavoritesAction } from '../../redux/actions/userAction';
 
 type Propstype = {
   newInfo:NewsType
@@ -15,7 +19,6 @@ type Propstype = {
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
   const { favorites } = useSelector((state:ReduxState) => state.userReducer);
-  const dispatch = useDispatch();
 
   return (
     <section className={ styles.card }>
@@ -39,12 +42,12 @@ export default function NewsCard({ newInfo }:Propstype) {
         <span>{newInfo.editorias}</span>
 
         <button
-          onClick={ () => {} }
+          onClick={ () => addFavoritesOrRemove(favorites, newInfo) }
           className={ styles.buttonfavorite }
         >
           <img
             className={ styles.imageFavorite }
-            src={ favoriteIcon }
+            src={ isFavorite(favorites, newInfo) ? isFavoriteIcon : favoriteIcon }
             alt="icone favoritar"
           />
         </button>

@@ -4,7 +4,7 @@ export const UPDATE_USER = 'UPDATE_USER';
 
 export const ADD_FAVORITES = 'ADD_FAVORITES';
 
-export const REMOVE_FAVORITES = 'ADD_FAVORITES';
+export const REMOVE_FAVORITES = 'REMOVE_FAVORITES';
 
 export const userUpdateAction = (profile:{ user:string, email:string }) => {
   return {
@@ -16,13 +16,17 @@ export const userUpdateAction = (profile:{ user:string, email:string }) => {
 export const addFavoritesAction = (news:NewsType) => {
   return {
     type: ADD_FAVORITES,
-    payload: news,
+    payload: {
+      favorite: news,
+    },
   };
 };
 
 export const removeFavoritesAction = (news:NewsType) => {
   return {
     type: REMOVE_FAVORITES,
-    payload: news,
+    payload: {
+      favorite: news,
+    },
   };
 };
