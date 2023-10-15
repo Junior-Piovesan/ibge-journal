@@ -1,6 +1,11 @@
 import { AnyAction } from 'redux';
 // import { NewsType } from '../../types';
-import { ADD_FAVORITES, REMOVE_FAVORITES, UPDATE_USER } from '../actions/userAction';
+import {
+  ADD_FAVORITES,
+  INITIAL_FAVORITES,
+  REMOVE_FAVORITES,
+  UPDATE_USER,
+} from '../actions/userAction';
 
 // type ActionType = {
 //   type:string,
@@ -39,6 +44,11 @@ const userReducer = (state = INITIAL_REDUCER, action:AnyAction) => {
         favorites: newArray,
       };
     }
+    case INITIAL_FAVORITES:
+      return {
+        ...state,
+        favorites: action.type.favorite,
+      };
     default:
       return state;
   }
