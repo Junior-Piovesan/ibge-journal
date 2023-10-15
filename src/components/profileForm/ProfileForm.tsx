@@ -35,7 +35,6 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
     <form
       className={ styles.container }
       onSubmit={ (event) => {
-        console.log('oi');
         onSubmit(event);
       } }
     >
@@ -65,7 +64,12 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
           type="text"
         />
       </label>
-      <button className={ styles.button }>Enviar</button>
+      <button
+        disabled={ !validationForm(profile) }
+        className={ styles.button }
+      >
+        Enviar
+      </button>
     </form>
   );
 }

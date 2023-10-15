@@ -17,7 +17,7 @@ import {
 // };
 
 const INITIAL_REDUCER = {
-  user: '',
+  user: 'Profile',
   email: '',
   favorites: [],
 };

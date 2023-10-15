@@ -10,7 +10,7 @@
 .label {
   text-align: center;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .input {
@@ -36,7 +36,9 @@
   height: 2rem;
   font-weight: 600;
   text-transform: uppercase;
+  margin-left: 8%;
   margin-bottom: 2rem;
+  margin-top: 2rem;
   letter-spacing: 0.1rem;
   width: 50%;
 }
