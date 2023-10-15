@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import useImages from '../../Hooks/useImages';
 
 import { NewsType, ReduxState } from '../../types';
@@ -10,7 +10,6 @@ import isFavoriteIcon from '../../assets/isFavorite.svg';
 
 import { isFavorite } from '../../utils/isFavorite';
 import { addFavoritesOrRemove } from '../../utils/AddFavoritesOrRemove';
-import { addFavoritesAction } from '../../redux/actions/userAction';
 
 type Propstype = {
   newInfo:NewsType
