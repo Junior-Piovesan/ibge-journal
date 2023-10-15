@@ -1,6 +1,7 @@
+import { useDispatch, useSelector } from 'react-redux';
 import useImages from '../../Hooks/useImages';
 
-import { NewsType } from '../../types';
+import { NewsType, ReduxState } from '../../types';
 
 import styles from './newsCard.module.css';
 
@@ -13,6 +14,8 @@ type Propstype = {
 
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
+  const { favorites } = useSelector((state:ReduxState) => state.userReducer);
+  const dispatch = useDispatch();
 
   return (
     <section className={ styles.card }>
@@ -35,7 +38,10 @@ export default function NewsCard({ newInfo }:Propstype) {
         <span>{`Publicação: ${newInfo.data_publicacao}`}</span>
         <span>{newInfo.editorias}</span>
 
-        <button className={ styles.buttonfavorite }>
+        <button
+          onClick={ () => {} }
+          className={ styles.buttonfavorite }
+        >
           <img
             className={ styles.imageFavorite }
             src={ favoriteIcon }
