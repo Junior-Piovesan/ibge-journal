@@ -4,6 +4,9 @@ import { NewsType } from '../../types';
 
 import styles from './newsCard.module.css';
 
+import favoriteIcon from '../../assets/favorite.svg';
+import isfavoriteIcon from '../../assets/isFavorite.svg';
+
 type Propstype = {
   newInfo:NewsType
 };
@@ -25,11 +28,21 @@ export default function NewsCard({ newInfo }:Propstype) {
           src={ imagesObj.image_intro }
           alt="Imagem da notícia"
         />
+
       </div>
 
       <section className={ styles.newInfoContainer }>
         <span>{`Publicação: ${newInfo.data_publicacao}`}</span>
         <span>{newInfo.editorias}</span>
+
+        <button className={ styles.buttonfavorite }>
+          <img
+            className={ styles.imageFavorite }
+            src={ favoriteIcon }
+            alt="icone favoritar"
+          />
+        </button>
+
       </section>
 
     </section>
