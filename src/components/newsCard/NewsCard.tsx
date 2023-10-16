@@ -58,7 +58,7 @@ export default function NewsCard({ newInfo }:Propstype) {
         </button>
 
       </section>
-
+      <a target="blank" href={ newInfo.link }> Ler notícia aqui</a>
     </section>
   );
 }
