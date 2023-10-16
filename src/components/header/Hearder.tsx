@@ -26,7 +26,7 @@ export default function Hearder() {
       <section className={ styles.profileContainer }>
         <Link className={ styles.link } to="/profile">
           <img className={ styles.img } src={ profileIcon } alt="icone de perfil" />
-          {user}
+          {user === '' ? 'Login' : user}
         </Link>
       </section>
     </header>

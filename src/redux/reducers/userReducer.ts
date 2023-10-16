@@ -17,7 +17,7 @@ import { NewsType } from '../../types';
 // };
 
 const INITIAL_REDUCER = {
-  user: 'Profile',
+  user: '',
   email: '',
   favorites: [],
 };
