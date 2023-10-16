@@ -126,3 +126,40 @@ width: 100%;
     width: 80%;
   }
 }
+
+@media (max-width: 1100px) {
+  .cardSmall,.card {
+    align-items: center;
+    border-left: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+  }
+  .articleSmalls,.article {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+  .titleSmalls,.title {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .introdutionSmalls,.introdution {
+    width: 100%;
+    text-align: left;
+  }
+
+  .imageContainerSmall.imageContainer {
+    width: 60%;
+  }
+
+  .newInfoContainerSmalls,.newInfoContainer {
+    align-items: baseline;
+    height: 7rem;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
