@@ -38,3 +38,14 @@
   height: 5rem;
   width: 80%;
 }
+
+.buttonfavorite{
+  background-color: transparent;
+  cursor: pointer;
+  border-style: none;
+  width: 3%;
+}
+
+.imageFavorite {
+width: 100%;
+}

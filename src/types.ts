@@ -33,6 +33,7 @@ export type ReduxState = {
   userReducer : {
     user: string,
     email: string,
+    favorites:NewsType[]
   }
 };
 

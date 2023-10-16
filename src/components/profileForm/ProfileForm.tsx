@@ -4,6 +4,7 @@ import { validationForm } from '../../utils/validationForm';
 import { userUpdateAction } from '../../redux/actions/userAction';
 
 import styles from './profileFrom.module.css';
+import { addLocalStorage } from '../../utils/localStorage';
 
 type PropTypes = {
   profile:{ user:string, email:string }
@@ -26,6 +27,7 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
     event.preventDefault();
     if (validationForm(profile)) {
       dispatch(userUpdateAction(profile));
+      addLocalStorage('profile', profile);
       setProfile({ user: '', email: '' });
     }
   };
@@ -33,7 +35,6 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
     <form
       className={ styles.container }
       onSubmit={ (event) => {
-        console.log('oi');
         onSubmit(event);
       } }
     >
@@ -63,7 +64,12 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
           type="text"
         />
       </label>
-      <button className={ styles.button }>Enviar</button>
+      <button
+        disabled={ !validationForm(profile) }
+        className={ styles.button }
+      >
+        Enviar
+      </button>
     </form>
   );
 }
