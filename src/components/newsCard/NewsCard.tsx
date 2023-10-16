@@ -11,6 +11,7 @@ import isFavoriteIcon from '../../assets/isFavorite.svg';
 
 import { isFavorite } from '../../utils/isFavorite';
 import { addFavoritesOrRemove } from '../../utils/AddFavoritesOrRemove';
+import { calculateDate } from '../../utils/calculateDate';
 
 type Propstype = {
   newInfo:NewsType
@@ -18,7 +19,7 @@ type Propstype = {
 
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
-  const { favorites } = useSelector((state:ReduxState) => state.userReducer);
+  const { user, favorites } = useSelector((state:ReduxState) => state.userReducer);
   const [favoriteList, setfavorites] = useState<NewsType[]>([]);
 
   useEffect(() => {
@@ -43,22 +44,27 @@ export default function NewsCard({ newInfo }:Propstype) {
       </div>
 
       <section className={ styles.newInfoContainer }>
-        <span>{`Publicação: ${newInfo.data_publicacao}`}</span>
+        <span>{calculateDate(newInfo.data_publicacao)}</span>
+        <a target="blank" href={ newInfo.link }> Ler notícia aqui</a>
         <span>{newInfo.editorias}</span>
 
-        <button
-          onClick={ () => addFavoritesOrRemove(favorites, newInfo) }
-          className={ styles.buttonfavorite }
-        >
-          <img
-            className={ styles.imageFavorite }
-            src={ isFavorite(favoriteList, newInfo) ? isFavoriteIcon : favoriteIcon }
-            alt="icone favoritar"
-          />
-        </button>
+        {user === '' ? (
+          <p>Faça login para favoritar a notícia.</p>
+        ) : (
+
+          <button
+            onClick={ () => addFavoritesOrRemove(favorites, newInfo) }
+            className={ styles.buttonfavorite }
+          >
+            <img
+              className={ styles.imageFavorite }
+              src={ isFavorite(favoriteList, newInfo) ? isFavoriteIcon : favoriteIcon }
+              alt="icone favoritar"
+            />
+          </button>
+        )}
 
       </section>
-      <a target="blank" href={ newInfo.link }> Ler notícia aqui</a>
     </section>
   );
 }
