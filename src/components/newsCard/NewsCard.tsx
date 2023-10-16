@@ -15,9 +15,10 @@ import { calculateDate } from '../../utils/calculateDate';
 
 type Propstype = {
   newInfo:NewsType
+  index:number
 };
 
-export default function NewsCard({ newInfo }:Propstype) {
+export default function NewsCard({ newInfo, index }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
   const { user, favorites } = useSelector((state:ReduxState) => state.userReducer);
   const [favoriteList, setfavorites] = useState<NewsType[]>([]);
@@ -27,14 +28,29 @@ export default function NewsCard({ newInfo }:Propstype) {
   }, [favorites]);
 
   return (
-    <section className={ styles.card }>
+    <section className={ index === 0 ? styles.card : styles.cardSmall }>
 
-      <article className={ styles.article }>
-        <h1 className={ styles.title }>{newInfo.titulo}</h1>
-        <p className={ styles.introdution }>{newInfo.introducao}</p>
+      <article
+        className={ index === 0 ? styles.article : styles.articleSmalls }
+      >
+
+        <h1
+          className={ index === 0 ? styles.title : styles.titleSmalls }
+        >
+          {newInfo.titulo}
+        </h1>
+
+        <p
+          className={ index === 0 ? styles.introdution : styles.introdutionSmalls }
+        >
+          {newInfo.introducao}
+        </p>
+
       </article>
 
-      <div className={ styles.imageContainer }>
+      <div
+        className={ index === 0 ? styles.imageContainer : styles.imageContainerSmall }
+      >
         <img
           className={ styles.image }
           src={ imagesObj.image_intro }
@@ -43,7 +59,11 @@ export default function NewsCard({ newInfo }:Propstype) {
 
       </div>
 
-      <section className={ styles.newInfoContainer }>
+      <section
+        className={ index === 0
+          ? styles.newInfoContainer
+          : styles.newInfoContainerSmalls }
+      >
         <span>{calculateDate(newInfo.data_publicacao)}</span>
 
         <a

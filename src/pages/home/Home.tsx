@@ -29,8 +29,8 @@ export default function Home() {
     <section className={ styles.container }>
       {loading && <Loading />}
 
-      {news.map((newInfo) => (
-        <NewsCard key={ newInfo.id } newInfo={ newInfo } />
+      {news.map((newInfo, index) => (
+        <NewsCard key={ newInfo.id } index={ index } newInfo={ newInfo } />
       )).filter((e, index) => index <= moreNews)}
       {!loading && <Footer />}
     </section>
