@@ -11,8 +11,9 @@ export const addFavoritesOrRemove = (
   if (!isFavorite(favorites, news)) {
     store.dispatch(addFavoritesAction(news));
     addLocalStorage('favorites', [...favorites, news]);
-  } if (isFavorite(favorites, news)) {
-    addLocalStorage('favorites', favorites.filter((e) => e !== news));
+  } else if (isFavorite(favorites, news)) {
+    const newArray = favorites.filter((e) => e.id !== news.id);
+    addLocalStorage('favorites', newArray);
     store.dispatch(removeFavoritesAction(news));
   }
 };

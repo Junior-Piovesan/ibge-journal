@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import useImages from '../../Hooks/useImages';
 
 import { NewsType, ReduxState } from '../../types';
@@ -18,6 +19,11 @@ type Propstype = {
 export default function NewsCard({ newInfo }:Propstype) {
   const { imagesObj } = useImages(newInfo.imagens);
   const { favorites } = useSelector((state:ReduxState) => state.userReducer);
+  const [favoriteList, setfavorites] = useState<NewsType[]>([]);
+
+  useEffect(() => {
+    setfavorites(favorites);
+  }, [favorites]);
 
   return (
     <section className={ styles.card }>
@@ -46,7 +52,7 @@ export default function NewsCard({ newInfo }:Propstype) {
         >
           <img
             className={ styles.imageFavorite }
-            src={ isFavorite(favorites, newInfo) ? isFavoriteIcon : favoriteIcon }
+            src={ isFavorite(favoriteList, newInfo) ? isFavoriteIcon : favoriteIcon }
             alt="icone favoritar"
           />
         </button>

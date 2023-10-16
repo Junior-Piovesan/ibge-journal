@@ -11,6 +11,7 @@ import NewsCard from '../../components/newsCard/NewsCard';
 
 import styles from './home.module.css';
 import Footer from '../../components/footer/Footer';
+import { initialGlobalState } from '../../utils/InitialGlobalState';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
@@ -21,6 +22,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(fetchRecentsNews());
+    initialGlobalState();
   }, []);
 
   return (
