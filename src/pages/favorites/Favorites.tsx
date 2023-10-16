@@ -10,7 +10,10 @@ export default function Favorites() {
   return (
     <section className={ styles.container }>
       <Back route="/" />
-      {favorites.length > 0 ? (
+
+      {user === '' && <h1 className={ styles.title }> Faça o Login.</h1>}
+
+      {favorites.length > 0 && (
         <>
           <h1
             className={ styles.title }
@@ -24,7 +27,9 @@ export default function Favorites() {
             ))}
           </div>
         </>
-      ) : (
+      )}
+
+      {(favorites.length === 0 && user.length > 0) && (
         <h1
           className={ styles.title }
         >

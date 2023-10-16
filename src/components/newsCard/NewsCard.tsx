@@ -45,7 +45,15 @@ export default function NewsCard({ newInfo }:Propstype) {
 
       <section className={ styles.newInfoContainer }>
         <span>{calculateDate(newInfo.data_publicacao)}</span>
-        <a target="blank" href={ newInfo.link }> Ler notícia aqui</a>
+
+        <a
+          className={ styles.link }
+          target="blank"
+          href={ newInfo.link }
+        >
+          Ler notícia aqui
+        </a>
+
         <span>{newInfo.editorias}</span>
 
         {user === '' ? (

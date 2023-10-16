@@ -49,3 +49,9 @@
 .imageFavorite {
 width: 100%;
 }
+
+.link {
+  border-bottom: 1px solid var(--cinza);
+  color: var(--preto);
+  text-decoration: none;
+}
