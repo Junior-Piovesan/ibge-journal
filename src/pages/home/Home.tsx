@@ -18,6 +18,7 @@ export default function Home() {
   const { news, loading, error } = useSelector(
     (state:ReduxState) => state.newsReducer,
   );
+  const { filter } = useSelector((state:ReduxState) => state.filterReducer);
   const { moreNews } = useSelector((state:ReduxState) => state.moreNewsReducer);
   const dispatch:Dispatch = useDispatch();
 

@@ -30,10 +30,13 @@ export type ReduxState = {
   moreNewsReducer: {
     moreNews:number
   },
-  userReducer : {
+  userReducer: {
     user: string,
     email: string,
     favorites:NewsType[]
+  },
+  filterReducer: {
+    filter:string
   }
 };
 
