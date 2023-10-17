@@ -6,6 +6,15 @@
   padding: 0 1rem
 }
 
+.headerError {
+  border-bottom: 1px solid var(--cinza);
+  display: flex;
+  filter: blur(4px);
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 1rem
+}
+
 .dateContainer ,.titleContainer, .profileContainer  {
   align-items: center;
   display: flex;
@@ -44,6 +53,12 @@
 
 @media (max-width: 790px) {
   .header {
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 0.3rem;
+  }
+
+  .headerError {
     flex-wrap: wrap;
     height: auto;
     margin-top: 0.3rem;

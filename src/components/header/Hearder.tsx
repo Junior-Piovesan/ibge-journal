@@ -10,11 +10,14 @@ import { ReduxState } from '../../types';
 
 export default function Hearder() {
   const { user } = useSelector((state:ReduxState) => state.userReducer);
+  const { error } = useSelector((state:ReduxState) => state.newsReducer);
 
   const { date } = useDate();
 
   return (
-    <header className={ styles.header }>
+    <header
+      className={ error ? styles.headerError : styles.header }
+    >
       <section className={ styles.dateContainer }>
         <p className={ styles.date }>{date}</p>
       </section>

@@ -7,6 +7,16 @@
   width: 100%;
 }
 
+.navError {
+  align-items: center;
+  border-bottom: 4px double var(--preto);
+  display: flex;
+  filter: blur(4px);
+  height: 3rem;
+  justify-content: space-around;
+  width: 100%;
+}
+
 .label,.labelcheck {
   border-bottom: 1px solid var(--cinza);
   cursor: pointer;

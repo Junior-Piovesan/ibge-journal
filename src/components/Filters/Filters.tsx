@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { Dispatch } from '../../types';
+import { Dispatch, ReduxState } from '../../types';
 
 import { resetCount } from '../../redux/actions/moreNewsAction';
 import { fetchReleaseAction } from '../../redux/actions/releaseNewsAction';
@@ -16,11 +16,15 @@ const MAIS_RECENTES = 'mais-recentes';
 
 export default function Filters() {
   const [checked, setchecked] = useState(MAIS_RECENTES);
+  const { error } = useSelector((state:ReduxState) => state.newsReducer);
 
   const dispatch:Dispatch = useDispatch();
 
   return (
-    <nav id="topo" className={ styles.nav }>
+    <nav
+      id="topo"
+      className={ error ? styles.navError : styles.nav }
+    >
 
       <label
         className={ checked === MAIS_RECENTES ? styles.labelcheck : styles.label }
