@@ -7,6 +7,12 @@
   width: 80%;
 }
 
+.global-container-error {
+  filter: blur(5px);
+  width: 80%;
+  z-index: 1;
+}
+
 @media (max-width: 790px) {
   .global-container {
     width: 100%;

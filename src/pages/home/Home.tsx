@@ -12,6 +12,7 @@ import NewsCard from '../../components/newsCard/NewsCard';
 import styles from './home.module.css';
 import Footer from '../../components/footer/Footer';
 import { initialGlobalState } from '../../utils/InitialGlobalState';
+import PopUpError from '../../components/popUpError/PopUpError';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
@@ -33,6 +34,8 @@ export default function Home() {
         <NewsCard key={ newInfo.id } index={ index } newInfo={ newInfo } />
       )).filter((e, index) => index <= moreNews)}
       {!loading && <Footer />}
+
+      {error && <PopUpError />}
     </section>
   );
 }

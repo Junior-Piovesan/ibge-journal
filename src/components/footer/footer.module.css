@@ -8,6 +8,17 @@
   width: 100%;
 }
 
+.footerError {
+  align-items: center;
+  display: flex;
+  filter: blur(4px);
+  border-top: 3px double var(--preto);
+  height: 80px;
+  justify-content: space-evenly;
+  margin-top: 2rem;
+  width: 100%;
+}
+
 .button {
   border: 1px solid var(--cinza);
   border-radius: 0.2rem;
