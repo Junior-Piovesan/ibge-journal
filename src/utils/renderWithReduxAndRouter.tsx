@@ -5,12 +5,12 @@ import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import counterReducer from '../redux/reducers/newsReducer.ts';
-import { GlobalState } from '../types';
+import { ReduxState } from '../types';
 
 function renderWithRouterAndRedux(
   component: JSX.Element,
   route: string = '/',
-  state: GlobalState | undefined = undefined,
+  state: any | undefined = undefined,
   store = legacy_createStore(
     combineReducers({ counterReducer }),
     state,
