@@ -74,7 +74,7 @@ export default function NewsCard({ newInfo, index }:Propstype) {
           Ler notícia aqui
         </a>
 
-        <span>{newInfo.editorias}</span>
+        {/* <span>{newInfo.editorias}</span> */}
 
         {user === '' ? (
           <p>Faça login para favoritar a notícia.</p>
