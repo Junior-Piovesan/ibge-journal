@@ -5,7 +5,6 @@ import { applyMiddleware, combineReducers, legacy_createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import counterReducer from '../redux/reducers/newsReducer.ts';
-import { ReduxState } from '../types';
 
 function renderWithRouterAndRedux(
   component: JSX.Element,
