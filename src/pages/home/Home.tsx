@@ -32,7 +32,7 @@ export default function Home() {
 
       {news.map((newInfo, index) => (
         <NewsCard key={ newInfo.id } index={ index } newInfo={ newInfo } />
-      )).filter((e, index) => index <= moreNews)}
+      )).filter((e, index) => index <= moreNews && typeof e === 'object')}
       {!loading && <Footer />}
 
       {error && <PopUpError />}
