@@ -25,3 +25,13 @@
   color: var(--preto);
   text-decoration: none;
 }
+
+@media (max-width : 790px) {
+  .label {
+    font-size: 0.8rem;
+  }
+  .labelcheck {
+    font-size: 0.9rem;
+
+  }
+}

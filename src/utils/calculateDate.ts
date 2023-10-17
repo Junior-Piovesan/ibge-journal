@@ -4,11 +4,9 @@ export const calculateDate = (date:string) => {
 
   const publicationDay = Number(date.substring(0, 2));
   const publicationMonth = Number(date.substring(3, 5));
-  const publicationHour = Number(date.substring(11, 16));
+  const publicationHour = date.substring(11, 16);
 
   if (monthCurrent === publicationMonth && dateCurrent === publicationDay) {
-    console.log(date);
-
     return `Publicado hoje as ${publicationHour} horas`;
   }
   if (monthCurrent === publicationMonth) {

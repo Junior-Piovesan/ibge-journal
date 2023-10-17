@@ -2,6 +2,13 @@
   display: flex;
   justify-content: center;
 }
+
 .global-container {
   width: 80%;
+}
+
+@media (max-width: 790px) {
+  .global-container {
+    width: 100%;
+  }
 }

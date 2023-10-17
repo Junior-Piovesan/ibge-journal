@@ -8,8 +8,24 @@
   width: 80%;
 }
 
+.cardSmall {
+  align-items: center;
+  border-bottom: 1px solid var(--cinza);
+  border-right: 1px solid var(--cinza);
+  border-left: 1px solid var(--cinza);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 3rem 0 3rem 0;
+  width: 50%;
+}
+
 .article {
   width: 40%;
+}
+
+.articleSmalls {
+  width: 90% ;
 }
 
 .title {
@@ -18,12 +34,27 @@
   width: 100%;
 }
 
+.titleSmalls {
+  margin: 1rem 0 2rem 0 ;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
 .introdution {
   width: 100%;
 }
 
+.introdutionSmalls {
+  width: 90%;
+  margin-bottom: 2rem;
+}
+
 .imageContainer {
   width: 50%;
+}
+
+.imageContainerSmall {
+  width: 40%;
 }
 
 .image {
@@ -39,6 +70,14 @@
   width: 80%;
 }
 
+.newInfoContainerSmalls {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 5rem;
+  width: 90%;
+}
+
 .buttonfavorite{
   background-color: transparent;
   cursor: pointer;
@@ -47,7 +86,7 @@
 }
 
 .imageFavorite {
-width: 100%;
+  width: 100%;
 }
 
 .link {
@@ -55,3 +94,108 @@ width: 100%;
   color: var(--preto);
   text-decoration: none;
 }
+
+@media (max-width: 1500px) {
+  .cardSmall {
+    align-items: normal;
+    border-left: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+  }
+  .articleSmalls {
+    width: 40% ;
+  }
+  .titleSmalls {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .introdutionSmalls {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .imageContainerSmall {
+    width: 50%;
+  }
+
+  .newInfoContainerSmalls {
+    height: 5rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cardSmall,.card {
+    align-items: center;
+    border-left: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 80%;
+  }
+  .articleSmalls,.article {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+  .titleSmalls,.title {
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .introdutionSmalls,.introdution {
+    width: 100%;
+    text-align: left;
+  }
+
+  .imageContainerSmall.imageContainer {
+    width: 60%;
+  }
+
+  .newInfoContainerSmalls,.newInfoContainer {
+    align-items: baseline;
+    height: 7rem;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 790px) {
+  .card, .cardSmall {
+    border-bottom: 6px double var(--cinza);
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+  }
+
+  .titleSmalls,.title {
+    font-size: 1rem;
+  }
+
+  .articleSmalls,.article {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .imageContainerSmall.imageContainer {
+    width: 80%;
+  }
+
+
+  .newInfoContainerSmalls,.newInfoContainer {
+    align-items: baseline;
+    height: 7rem;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .buttonfavorite{
+    width: 5%;
+  }
+}
+
