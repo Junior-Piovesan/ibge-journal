@@ -14,7 +14,6 @@ export const fetchNewsRelease = async () => {
 export const fetchNewsNoticia = async () => {
   const response = await fetch('http://servicodados.ibge.gov.br/api/v3/noticias/?tipo=noticia');
   const data = await response.json();
-  console.log(data.items);
 
   return data.items;
 };

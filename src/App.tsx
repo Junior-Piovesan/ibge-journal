@@ -4,6 +4,7 @@ import Layout from './pages/layout/Layout';
 import Home from './pages/home/Home';
 import Profile from './pages/profile/Profile';
 import Favorites from './pages/favorites/Favorites';
+import NotFound from './components/not-found/NotFound';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/profile" element={ <Profile /> } />
           <Route path="/favorites" element={ <Favorites /> } />
         </Route>
+        <Route path="/*" element={ <NotFound /> } />
       </Routes>
     </div>
   );
