@@ -9,7 +9,9 @@ export default function Favorites() {
   const { favorites, user } = useSelector((state:ReduxState) => state.userReducer);
   return (
     <section className={ styles.container }>
-      <Back route="/" />
+      <div className={ styles.backContainer }>
+        <Back route="/" />
+      </div>
 
       {user === '' && <h1 className={ styles.title }> Faça o Login.</h1>}
 
@@ -18,12 +20,15 @@ export default function Favorites() {
           <h1
             className={ styles.title }
           >
-            {`Olá ${user}, Você tem ${favorites.length} notícias favoritas.`}
+            {favorites.length > 1 && (
+              `Olá ${user}, Você tem ${favorites.length} notícias favoritas.`)}
 
+            {favorites.length <= 1 && (
+              `Olá ${user}, Você tem ${favorites.length} notícia favorita.`)}
           </h1>
           <div className={ styles.cardsContainer }>
-            {favorites.map((news) => (
-              <NewsCard key={ news.id } newInfo={ news } />
+            {favorites.map((news, index) => (
+              <NewsCard key={ news.id } newInfo={ news } index={ index } />
             ))}
           </div>
         </>

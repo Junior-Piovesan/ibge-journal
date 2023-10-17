@@ -24,3 +24,18 @@
   margin-left: 2rem ;
   margin-bottom: 1em;
 }
+
+@media (max-width: 790px) {
+  .container {
+    margin-top: 1rem;
+  }
+
+  .userInfoContainer {
+    width: 80%;
+  }
+
+  .backContainer {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+  }
+}

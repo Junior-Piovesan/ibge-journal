@@ -46,3 +46,13 @@
 .button:active {
   background-color: var(--branco); 
 }
+
+@media (max-width: 790px) {
+    .container {
+      width: 80%;
+    }
+
+    .input {
+      width: 70%;
+    }
+}

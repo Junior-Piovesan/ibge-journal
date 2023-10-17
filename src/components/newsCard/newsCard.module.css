@@ -86,7 +86,7 @@
 }
 
 .imageFavorite {
-width: 100%;
+  width: 100%;
 }
 
 .link {
@@ -164,6 +164,38 @@ width: 100%;
 }
 
 @media (max-width: 790px) {
+  .card, .cardSmall {
+    border-bottom: 6px double var(--cinza);
+    margin: 1rem 0 1rem 0;
+    width: 100%;
+  }
 
+  .titleSmalls,.title {
+    font-size: 1rem;
+  }
+
+  .articleSmalls,.article {
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  .imageContainerSmall.imageContainer {
+    width: 80%;
+  }
+
+
+  .newInfoContainerSmalls,.newInfoContainer {
+    align-items: baseline;
+    height: 7rem;
+    flex-direction: column;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .buttonfavorite{
+    width: 5%;
+  }
 }
 

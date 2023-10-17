@@ -27,3 +27,14 @@
   color: var(--preto);
   text-decoration: underline var(--cinza)
 }
+
+@media (max-width : 790px ) {
+  .button {
+    font-size: 0.7rem;
+    width: 40%;
+  }
+
+  .link {
+    font-size: 0.9rem;
+  }
+}

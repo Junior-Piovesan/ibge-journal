@@ -17,3 +17,11 @@ h1 {
   font-size: 1.4rem;
 }
 
+@media (max-width: 790px) {
+  h1{
+    font-size: 1rem;
+  }
+   p,span,a {
+    font-size: 0.8rem;
+   }
+}
