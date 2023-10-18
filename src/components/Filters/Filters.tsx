@@ -35,7 +35,6 @@ export default function Filters() {
             dispatch(updateFilterAction('mais-recentes'));
             setchecked(MAIS_RECENTES);
           } }
-          defaultChecked
           name="filter"
           id="recentes"
           type="radio"

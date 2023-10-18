@@ -1,4 +1,3 @@
-import { AnyAction } from 'redux';
 import {
   ADD_FAVORITES,
   INITIAL_FAVORITES,
@@ -7,14 +6,14 @@ import {
 } from '../actions/userAction';
 import { NewsType } from '../../types';
 
-// type ActionType = {
-//   type:string,
-//   payload: {
-//     user:string,
-//     email:string,
-//     favorite:NewsType
-//   }
-// };
+type ActionType = {
+  type:string,
+  payload: {
+    user:string,
+    email:string,
+    favorite:NewsType
+  }
+};
 
 const INITIAL_REDUCER = {
   user: '',
@@ -22,7 +21,7 @@ const INITIAL_REDUCER = {
   favorites: [],
 };
 
-const userReducer = (state = INITIAL_REDUCER, action:AnyAction) => {
+const userReducer = (state = INITIAL_REDUCER, action:ActionType) => {
   switch (action.type) {
     case UPDATE_USER:
       return {

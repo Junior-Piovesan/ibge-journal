@@ -37,7 +37,7 @@ export type ReduxState = {
   },
   filterReducer: {
     filter:string[]
-  }
+  },
 };
 
 export type Dispatch = ThunkDispatch<ReduxState, null, AnyAction>;

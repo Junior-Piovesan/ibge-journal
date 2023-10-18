@@ -6,7 +6,7 @@ import moreNewsReducer from './reducers/moreNewsReducer';
 import userReducer from './reducers/userReducer';
 import { filterReducer } from './reducers/filterReducer';
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
   newsReducer,
   moreNewsReducer,
   userReducer,

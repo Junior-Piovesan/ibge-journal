@@ -14,7 +14,6 @@ import Footer from '../../components/footer/Footer';
 import { initialGlobalState } from '../../utils/InitialGlobalState';
 import PopUpError from '../../components/popUpError/PopUpError';
 import { renderCondition } from '../../utils/renderCondition';
-import { newsMock } from '../../tests/mocks/newsMock';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
@@ -33,7 +32,7 @@ export default function Home() {
     <section className={ styles.container }>
       {loading && <Loading />}
 
-      {news.filter(({ tipo }) => filter
+      { (!loading && !error) && news.filter(({ tipo }) => filter
         .every((filt) => renderCondition(filt, tipo)))
         .filter((e, ind) => ind <= moreNews && typeof e === 'object')
         .map((newInfo, index) => (
