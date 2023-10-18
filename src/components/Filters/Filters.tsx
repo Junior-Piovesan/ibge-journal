@@ -79,6 +79,7 @@ export default function Filters() {
       </label>
 
       <Link className={ styles.link } to="/favorites">Favoritos</Link>
+
     </nav>
   );
 }

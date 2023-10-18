@@ -14,6 +14,7 @@ import Footer from '../../components/footer/Footer';
 import { initialGlobalState } from '../../utils/InitialGlobalState';
 import PopUpError from '../../components/popUpError/PopUpError';
 import { renderCondition } from '../../utils/renderCondition';
+import { newsMock } from '../../tests/mocks/newsMock';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
@@ -27,6 +28,8 @@ export default function Home() {
     dispatch(fetchRecentsNews());
     initialGlobalState();
   }, []);
+
+  console.log(newsMock.items.length);
 
   return (
     <section className={ styles.container }>
