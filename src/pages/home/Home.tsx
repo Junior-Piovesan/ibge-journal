@@ -32,7 +32,7 @@ export default function Home() {
     <section className={ styles.container }>
       {loading && <Loading />}
 
-      {news.filter(({ tipo }) => filter
+      { (!loading && !error) && news.filter(({ tipo }) => filter
         .every((filt) => renderCondition(filt, tipo)))
         .filter((e, ind) => ind <= moreNews && typeof e === 'object')
         .map((newInfo, index) => (

@@ -65,6 +65,7 @@ export default function NewsCard({ newInfo, index }:Propstype) {
           : styles.newInfoContainerSmalls }
       >
         <span>{calculateDate(newInfo.data_publicacao)}</span>
+        <span>{newInfo.tipo}</span>
 
         <a
           className={ styles.link }

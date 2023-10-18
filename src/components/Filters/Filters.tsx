@@ -35,7 +35,6 @@ export default function Filters() {
             dispatch(updateFilterAction('mais-recentes'));
             setchecked(MAIS_RECENTES);
           } }
-          defaultChecked
           name="filter"
           id="recentes"
           type="radio"
@@ -79,6 +78,7 @@ export default function Filters() {
       </label>
 
       <Link className={ styles.link } to="/favorites">Favoritos</Link>
+
     </nav>
   );
 }

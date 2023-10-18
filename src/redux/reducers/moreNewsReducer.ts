@@ -6,7 +6,7 @@ type ActionType = {
 };
 
 const INITIAL_STATE = {
-  moreNews: 10,
+  moreNews: 9,
 };
 
 const moreNewsReducer = (state = INITIAL_STATE, action:ActionType) => {
