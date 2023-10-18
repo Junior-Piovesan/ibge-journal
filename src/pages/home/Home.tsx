@@ -13,11 +13,13 @@ import styles from './home.module.css';
 import Footer from '../../components/footer/Footer';
 import { initialGlobalState } from '../../utils/InitialGlobalState';
 import PopUpError from '../../components/popUpError/PopUpError';
+import { renderCondition } from '../../utils/renderCondition';
 
 export default function Home() {
   const { news, loading, error } = useSelector(
     (state:ReduxState) => state.newsReducer,
   );
+  const { filter } = useSelector((state:ReduxState) => state.filterReducer);
   const { moreNews } = useSelector((state:ReduxState) => state.moreNewsReducer);
   const dispatch:Dispatch = useDispatch();
 
@@ -30,9 +32,17 @@ export default function Home() {
     <section className={ styles.container }>
       {loading && <Loading />}
 
-      {news.map((newInfo, index) => (
-        <NewsCard key={ newInfo.id } index={ index } newInfo={ newInfo } />
-      )).filter((e, index) => index <= moreNews && typeof e === 'object')}
+      {news.filter(({ tipo }) => filter
+        .every((filt) => renderCondition(filt, tipo)))
+        .filter((e, ind) => ind <= moreNews && typeof e === 'object')
+        .map((newInfo, index) => (
+          <NewsCard
+            key={ newInfo.id }
+            index={ index }
+            newInfo={ newInfo }
+          />
+        ))}
+
       {!loading && <Footer />}
 
       {error && <PopUpError />}

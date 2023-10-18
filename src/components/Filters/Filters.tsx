@@ -5,12 +5,9 @@ import { useState } from 'react';
 import { Dispatch, ReduxState } from '../../types';
 
 import { resetCount } from '../../redux/actions/moreNewsAction';
-import { fetchReleaseAction } from '../../redux/actions/releaseNewsAction';
-import { fetchNoticiasAction } from '../../redux/actions/noticiasNewsAction';
-
-import { fetchRecentsNews } from '../../redux/actions/recentsNewsAction';
 
 import styles from './filter.module.css';
+import { updateFilterAction } from '../../redux/actions/filterAction';
 
 const MAIS_RECENTES = 'mais-recentes';
 
@@ -35,7 +32,7 @@ export default function Filters() {
           className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
-            dispatch(fetchRecentsNews());
+            dispatch(updateFilterAction('mais-recentes'));
             setchecked(MAIS_RECENTES);
           } }
           defaultChecked
@@ -54,7 +51,7 @@ export default function Filters() {
           className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
-            dispatch(fetchReleaseAction());
+            dispatch(updateFilterAction('Release'));
             setchecked('release');
           } }
           name="filter"
@@ -72,7 +69,7 @@ export default function Filters() {
           className={ styles.input }
           onChange={ () => {
             dispatch(resetCount());
-            dispatch(fetchNoticiasAction());
+            dispatch(updateFilterAction('Notícia'));
             setchecked('noticia');
           } }
           name="filter"
