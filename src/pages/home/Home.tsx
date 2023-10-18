@@ -29,8 +29,6 @@ export default function Home() {
     initialGlobalState();
   }, []);
 
-  console.log(newsMock.items.length);
-
   return (
     <section className={ styles.container }>
       {loading && <Loading />}
