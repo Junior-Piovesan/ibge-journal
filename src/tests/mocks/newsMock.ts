@@ -1,7 +1,6 @@
 /* eslint-disable max-lines */
 /* eslint-disable sonarjs/no-duplicate-string */
 /* eslint-disable max-len */
-// export const newsMock = [
 export const newsMock = [
   {
     id: 38135,

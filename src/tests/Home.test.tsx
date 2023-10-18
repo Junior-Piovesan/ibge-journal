@@ -1,4 +1,4 @@
-import { getByRole, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 
 import { vi } from 'vitest';
 
@@ -11,7 +11,6 @@ import * as API_MODULE from '../utils/fetchs';
 
 import App from '../App';
 import { currentDate } from '../utils/currentDate';
-import { addLocalStorage } from '../utils/localStorage';
 
 const NO_EXISTENT_ROUTE = 'rota/inexistente';
 const EXISTING_ROUTE = '/';
@@ -38,9 +37,6 @@ const PROFILE_EMAIL = 'test@test.com';
 const BTN_VOLTAR = 'voltar';
 
 const BTN_FAVORITAR = 'icone favoritar';
-
-const SRC_NO_FAVORITE = '/src/assets/favorite.svg';
-const SRC_FAVORITE = '/src/assets/isFavorite.svg';
 
 afterEach(() => vi.clearAllMocks());
 
@@ -140,7 +136,7 @@ describe('Verifica se as funcionalidades estão funcionando como o esperado', ()
   });
 
   it('Verificase se ao fazer login é renderiza o botão de favoritar .', async () => {
-    const { user, debug } = renderWithRouterAndRedux(<App />, EXISTING_ROUTE);
+    const { user } = renderWithRouterAndRedux(<App />, EXISTING_ROUTE);
 
     const loading = screen.getByText(LOADING);
 
@@ -179,7 +175,11 @@ describe('Verifica se as funcionalidades estão funcionando como o esperado', ()
 
     const noFavoritesMessage = screen.getByRole('heading', { name: 'Olá Teste, Você Não tem notícias favoritadas.' });
     expect(noFavoritesMessage).toBeInTheDocument();
+  });
 
-    debug();
+  it('Verificase se a função fetch foi chamada 1 vez.', async () => {
+    renderWithRouterAndRedux(<App />, EXISTING_ROUTE);
+    expect(API_MODULE.fetchNews).toBeCalled();
+    expect(API_MODULE.fetchNews).toHaveBeenCalledTimes(1);
   });
 });
