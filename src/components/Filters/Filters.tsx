@@ -5,10 +5,6 @@ import { useState } from 'react';
 import { Dispatch, ReduxState } from '../../types';
 
 import { resetCount } from '../../redux/actions/moreNewsAction';
-import { fetchReleaseAction } from '../../redux/actions/releaseNewsAction';
-import { fetchNoticiasAction } from '../../redux/actions/noticiasNewsAction';
-
-import { fetchRecentsNews } from '../../redux/actions/recentsNewsAction';
 
 import styles from './filter.module.css';
 import { updateFilterAction } from '../../redux/actions/filterAction';

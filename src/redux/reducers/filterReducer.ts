@@ -6,7 +6,7 @@ type ActionType = {
 };
 
 const INITIAL_STATE = {
-  filter: 'mais-recentes',
+  filter: ['mais-recentes'],
 };
 
 export const filterReducer = (state = INITIAL_STATE, action:ActionType) => {

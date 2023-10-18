@@ -36,7 +36,7 @@ export type ReduxState = {
     favorites:NewsType[]
   },
   filterReducer: {
-    filter:string
+    filter:string[]
   }
 };
 
