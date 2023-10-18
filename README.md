@@ -47,15 +47,15 @@ devem fazer login na seção correspondente, localizada no canto superior direit
 
 ## Acesse o Projeto
 
-Para experimentar o IBGE Journal, acesse [aqui](#).
+Para experimentar o IBGE Journal, acesse  <a href="https://ibge-journal.vercel.app/" target="_blank">Aqui.</a>
 
 ## Contato
 
 Para mais informações ou dúvidas sobre o projeto, entre em contato com o desenvolvedor:
 
-- **LinkedIn:** [LinkedIn de Junior Piovesan](#)
+- **LinkedIn:**  <a href="https://www.linkedin.com/in/junior-piovesan-silva/" target="_blank">Aqui.</a>
 
-- **Portfolio:** [Portfolio de Junior Piovesan](#)
+- **Portfolio:** <a href="https://junior-piovesan.vercel.app/" target="_blank">Aqui.</a>
 
 Fique à vontade para explorar o projeto e compartilhar seus comentários ou sugestões.<br>
  Obrigado por utilizar o IBGE Journal!
