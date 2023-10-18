@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
@@ -14,6 +14,7 @@ const MAIS_RECENTES = 'mais-recentes';
 export default function Filters() {
   const [checked, setchecked] = useState(MAIS_RECENTES);
   const { error } = useSelector((state:ReduxState) => state.newsReducer);
+  const navigate = useNavigate();
 
   const dispatch:Dispatch = useDispatch();
 
@@ -34,6 +35,7 @@ export default function Filters() {
             dispatch(resetCount());
             dispatch(updateFilterAction('mais-recentes'));
             setchecked(MAIS_RECENTES);
+            navigate('/');
           } }
           name="filter"
           id="recentes"
@@ -52,6 +54,7 @@ export default function Filters() {
             dispatch(resetCount());
             dispatch(updateFilterAction('Release'));
             setchecked('release');
+            navigate('/');
           } }
           name="filter"
           id="release"
@@ -70,6 +73,7 @@ export default function Filters() {
             dispatch(resetCount());
             dispatch(updateFilterAction('Notícia'));
             setchecked('noticia');
+            navigate('/');
           } }
           name="filter"
           id="noticia"

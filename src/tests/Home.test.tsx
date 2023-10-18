@@ -149,23 +149,29 @@ describe('Verifica se as funcionalidades estão funcionando como o esperado', ()
     const inputName = screen.getByLabelText('Nome');
     const inputEmail = screen.getByLabelText('Email');
     const btnEnviar = screen.getByRole('button', { name: 'Enviar' });
-    const btnVoltar = screen.getByRole('img', { name: BTN_VOLTAR });
 
     await user.type(inputName, PROFILE_NAME);
     await user.type(inputEmail, PROFILE_EMAIL);
     await user.click(btnEnviar);
 
+    await user.click(linkLogin);
+
+    const name = screen.getByText('Nome: Teste');
+    const email = screen.getByText('email: test@test.com');
+
     act(() => {
-      expect(screen.getByText('Nome: Teste')).toBeInTheDocument();
-      expect(screen.getByText('email: test@test.com')).toBeInTheDocument();
+      expect(name).toBeInTheDocument();
+      expect(email).toBeInTheDocument();
     });
 
-    expect(inputName).toHaveValue('');
-    expect(inputEmail).toHaveValue('');
+    expect(screen.getByLabelText('Nome')).toHaveValue('');
+    expect(screen.getByLabelText('Email')).toHaveValue('');
 
-    await user.click(btnVoltar);
+    const btnBack = screen.getByRole('img', { name: BTN_VOLTAR });
 
-    const favoriteList = screen.getAllByRole('img', { name: BTN_FAVORITAR });
+    await user.click(btnBack);
+
+    const favoriteList = await screen.findAllByRole('img', { name: BTN_FAVORITAR });
 
     expect(favoriteList).toHaveLength(10);
 

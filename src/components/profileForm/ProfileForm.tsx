@@ -1,5 +1,6 @@
 import { ChangeEvent, FormEvent } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { validationForm } from '../../utils/validationForm';
 import { userUpdateAction } from '../../redux/actions/userAction';
 
@@ -13,6 +14,7 @@ type PropTypes = {
 
 export default function ProfileForm({ profile, setProfile }:PropTypes) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onChange = (
     { target: { name, value } }:ChangeEvent<HTMLInputElement>,
@@ -29,6 +31,7 @@ export default function ProfileForm({ profile, setProfile }:PropTypes) {
       dispatch(userUpdateAction(profile));
       addLocalStorage('profile', profile);
       setProfile({ user: '', email: '' });
+      navigate('/');
     }
   };
   return (
