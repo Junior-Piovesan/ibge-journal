@@ -55,7 +55,5 @@ Para mais informações ou dúvidas sobre o projeto, entre em contato com o dese
 
 - **LinkedIn:**  <a href="https://www.linkedin.com/in/junior-piovesan-silva/" target="_blank">Aqui.</a>
 
-- **Portfolio:** <a href="https://junior-piovesan.vercel.app/" target="_blank">Aqui.</a>
-
 Fique à vontade para explorar o projeto e compartilhar seus comentários ou sugestões.<br>
  Obrigado por utilizar o IBGE Journal!
